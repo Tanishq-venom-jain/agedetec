@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Age Detection Demo</title>
+    <style>
+      body { font-family: Arial, Helvetica, sans-serif; max-width: 720px; margin: 2rem auto; }
+      .result { margin-top: 1rem; font-weight: bold; }
+      img.preview { max-width: 100%; height: auto; margin-top: 1rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Age Detection Demo</h1>
+    <p>Choose an image or use your camera to capture a photo and click <em>Predict Age</em>.</p>
+
+    <div>
+      <form id="uploadForm">
+        <label for="imageInput">Upload image:</label>
+        <input type="file" id="imageInput" name="image" accept="image/*" />
+        <button type="submit">Predict Age</button>
+      </form>
+    </div>
+
+    <hr />
+
+    <div>
+      <button id="startCam">Use Camera</button>
+      <button id="captureBtn" disabled>Capture & Predict</button>
+      <button id="stopCam" disabled>Stop Camera</button>
+    </div>
+
+    <video id="video" autoplay playsinline style="display:none; margin-top:1rem; max-width:100%;"></video>
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <div class="result" id="result"></div>
+    <div id="confidence" style="font-size: 0.9em; color: #666; margin-top: 0.5rem;"></div>
+    <img id="preview" class="preview" src="" alt="Preview" style="display:none" />
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
